@@ -1,0 +1,64 @@
+<div class="c-toolbar u-mb-medium">
+    <h4 class="c-toolbar__title has-divider">
+        <a class="c-btn c-btn--blue u-hidden-down@mobile">Today</a>
+    </h4>
+    <h5 class="c-toolbar__meta u-mr-auto"></h5>
+    <a class="c-btn c-btn--secondary  u-hidden-down@mobile" [routerLink]="['/drivers/add']" 
+    routerLinkActive="router-link-active" >Back</a>
+  </div>
+  <div class="container">
+  
+    <div class="row u-mb-large">
+      <div class="col-md-12">
+        <div class="c-table-responsive@wide">
+          <table class="c-table">
+            <caption class="c-table__title">
+              All Upcomming Bookings
+            </caption>
+            <thead class="c-table__head c-table__head--slim">
+              <tr class="c-table__row">
+                <th class="c-table__cell c-table__cell--head">No.</th>
+                <th class="c-table__cell c-table__cell--head">Name</th>
+                <th class="c-table__cell c-table__cell--head">Phone</th>
+                <th class="c-table__cell c-table__cell--head">Where</th>
+                <th class="c-table__cell c-table__cell--head">When</th>
+                
+                 <th class="c-table__cell c-table__cell--head">Status</th>
+                <th class="c-table__cell c-table__cell--head">
+                    Actions
+                </th>
+              </tr>
+            </thead>
+  
+            <tbody>
+              <tr class="c-table__row" *ngFor="let item of items">
+                <td class="c-table__cell"><span class="u-text-mute">{{item.payload.doc.id}}</span></td>
+                <td class="c-table__cell">{{item.payload.doc.data().name}}</td>
+               
+                <td class="c-table__cell">
+                  <span class="u-text-mute">{{item.payload.doc.data().phone}}</span>
+                </td>
+                <td class="c-table__cell">{{item.payload.doc.data().address1}}</td>
+                <td class="c-table__cell">
+                  <span class="u-text-mute">{{item.payload.doc.data().date?.toDate() | date: 'medium' | amDateFormat:'LL'}}</span>
+                </td>
+                <td class="c-table__cell">
+                  <span *ngIf="item.payload.doc.data().status == 'pending'" class="c-badge c-badge--small c-badge--info">{{item.payload.doc.data().status}}</span>
+                </td>
+               
+  
+                <td class="c-table__cell u-text-right">
+                  <a (click)="viewDetails(item)"  routerLinkActive="router-link-active"  class="c-btn c-btn--info u-mr-xsmall">View</a>
+                  <a class="c-btn c-btn--danger">
+                      <i class="fa fa-trash-o u-mr-xsmall"></i>Delete
+                  </a>
+                </td>
+              </tr><!-- // .table__row -->
+              
+            </tbody>
+          </table>
+        </div><!-- // .c-card -->
+      </div>
+    </div><!-- // .row -->
+  </div>
+  

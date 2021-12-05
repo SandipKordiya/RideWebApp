@@ -1,0 +1,61 @@
+.header-nav-area .site-logo {
+    padding: 3px 0!important;
+}
+.padd-lr0 {
+    padding-right: 0;
+}
+.padd-l0, .padd-lr0, .padd-only-xs {
+    padding-left: 0;
+}
+.wheel-service-img {
+    margin-top: -230px;
+    position: relative;
+    z-index: 3;
+    background-size: auto;
+    background-repeat: no-repeat;
+    background-position: top;
+}
+.wheel-service-item {
+    padding: 60px 0 155px;
+    -webkit-transition: all .3s ease;
+    transition: all .3s ease;
+}
+
+.wheel-bg3 {
+    background-color: #00bcd4;
+}
+.wheel-service-logo {
+    position: relative;
+}
+.wheel-service-item h5 {
+    margin: 30px 0 15px;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    text-transform: uppercase;
+}
+.wheel-service-item p {
+    color: #fff;
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 27px;
+    display: inline-block;
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+}
+.wheel-service-active {
+    margin: -20px -5px 0;
+    padding: 70px 0 170px;
+    border: 8px solid #fff;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 15px rgba(0,0,0,.15);
+}
+.wheel-bg4 {
+    background-color: #ff7043;
+}
+.wheel-bg5 {
+    background-color: #9ccc65;
+}

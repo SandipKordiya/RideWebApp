@@ -1,0 +1,28 @@
+<div class="o-page__card">
+        <div class="c-card u-mb-xsmall">
+            <header class="c-card__header u-pt-large">
+                <h1 class="u-h3 u-text-center u-mb-zero">Welcome back! Please login.</h1>
+            </header>
+            
+            <form #loginForm="ngForm" (ngSubmit)="login()" class="c-card__body">
+                <div class="c-field u-mb-small">
+                    <label class="c-field__label" for="input1">Log in with your e-mail address</label> 
+                    <input class="c-input" type="email" name="username"
+                    placeholder="Username" required [(ngModel)]="model.username"> 
+                </div>
+
+                <div class="c-field u-mb-small">
+                    <label class="c-field__label" for="input2">Password</label> 
+                    <input class="c-input" type="password" name="password"
+                    placeholder="Password" required [(ngModel)]="model.password"> 
+                </div>
+
+                <button class="c-btn c-btn--info c-btn--fullwidth" type="submit"  [disabled]="!loginForm.valid" >Sign in to Dashboard</button>
+
+            </form>
+        </div>
+
+        <div class="o-line">
+            <a class="u-text-mute u-text-small" href="forgot-password.html">Forgot Password?</a>
+        </div>
+    </div>

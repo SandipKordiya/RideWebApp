@@ -1,0 +1,61 @@
+<div class="c-toolbar u-mb-medium">
+  <h4 class="c-toolbar__title has-divider">
+      <a class="c-btn c-btn--blue u-hidden-down@mobile" [routerLink]="['/taxi/add']" routerLinkActive="router-link-active" >Add New Taxi</a>
+  </h4>
+  <h5 class="c-toolbar__meta u-mr-auto"></h5>
+  <a class="c-btn c-btn--secondary  u-hidden-down@mobile" [routerLink]="['/taxi']" 
+  routerLinkActive="router-link-active" >Back</a>
+</div>
+<div class="container">
+
+  <div class="row u-mb-large">
+    <div class="col-md-12">
+      <div class="c-table-responsive@wide">
+        <table class="c-table">
+          <caption class="c-table__title">
+            All Taxi
+          </caption>
+          <thead class="c-table__head c-table__head--slim">
+            <tr class="c-table__row">
+              <th class="c-table__cell c-table__cell--head">No.</th>
+              <th class="c-table__cell c-table__cell--head">Model</th>
+              <th class="c-table__cell c-table__cell--head">number</th>
+              <th class="c-table__cell c-table__cell--head">driver</th>
+              <th class="c-table__cell c-table__cell--head">image</th>
+              <th class="c-table__cell c-table__cell--head">Status</th>
+              <th class="c-table__cell c-table__cell--head">
+                  Actions
+              </th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr class="c-table__row" *ngFor="let item of items">
+              <td class="c-table__cell"><span class="u-text-mute">{{item.payload.doc.id}}</span></td>
+              <td class="c-table__cell">{{item.payload.doc.data().model}}</td>
+              <td class="c-table__cell">
+                <span class="u-text-mute">{{item.payload.doc.data().number}}</span>
+              </td>
+              <td class="c-table__cell">{{item.payload.doc.data().driver}}</td>
+              <td class="c-table__cell">
+                <img [src]="item.payload.doc.data().url" width="100px">
+              </td>
+              <td class="c-table__cell">
+                <span class="c-badge c-badge--small c-badge--success">{{item.payload.doc.data().status}}</span>
+              </td>
+             
+
+              <td class="c-table__cell u-text-right">
+                <a href="invoice.html" class="c-btn c-btn--info u-mr-xsmall">Edit</a>
+                <!-- <a class="c-btn c-btn--danger" (click)="delete(item)">
+                    <i class="fa fa-trash-o u-mr-xsmall"></i>Delete
+                </a> -->
+              </td>
+            </tr><!-- // .table__row -->
+            
+          </tbody>
+        </table>
+      </div><!-- // .c-card -->
+    </div>
+  </div><!-- // .row -->
+</div>

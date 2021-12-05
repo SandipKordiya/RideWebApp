@@ -1,0 +1,106 @@
+<div class="c-toolbar u-justify-between u-mb-medium">
+    <nav class="c-counter-nav">
+        <p class="c-counter-nav__title">Status:</p>
+        <div class="c-counter-nav__item u-hidden-down@tablet">
+            <a class="c-counter-nav__link" href="#">
+                <span class="c-counter-nav__counter"><i class="fa fa-check"></i></span>Contract
+            </a>
+        </div>
+    </nav>
+    <span class="c-badge c-badge--small c-badge--info">{{this.item.status}}</span>
+</div>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-xl-8">
+            <article class="c-stage" id="stages">
+                <a class="c-stage__header u-flex u-justify-between">
+                    <div class="o-media">
+                        <div class="c-stage__header-title o-media__body">
+                            <h6 class="u-mb-zero">{{this.item.id}}</h6>
+                            <p class="u-text-xsmall u-text-mute">{{this.item.createdAt?.toDate() | date: 'medium' | amTimeAgo}}</p>
+                        </div>
+                    </div>
+                    
+                    <i class="fa fa-angle-down u-text-mute"></i>
+                </a>
+                <div class="c-stage__label">
+                    <i class="c-stage__label-icon fa fa-check-circle"></i>
+                    <p class="c-stage__label-title">Pickup Address - {{this.item.address1}}</p>
+                </div>
+                
+                <div class="c-stage__panel c-stage__panel--mute collapse show" id="stage-panel1">
+                    <div class="u-p-medium">
+                        <p class="u-text-mute u-text-uppercase u-text-small u-mb-xsmall">Description</p>
+                        <p class="u-mb-medium">
+                            <agm-map>
+                                <agm-direction [origin]="this.item.origin" [destination]="this.item.destination">
+                                </agm-direction>
+                              </agm-map>
+                        </p>
+
+                        <p class="u-text-mute u-text-uppercase u-text-small u-mb-xsmall">Details</p>
+                        <div class="row">
+                            <div class="col-md-7">
+                                <ul>
+                                    <li class="u-mb-xsmall u-text-small u-color-primary">
+                                        <i class="fa fa-check u-color-info u-text-mute u-mr-xsmall"></i>Booking Date and Time: {{this.item.date?.toDate() | date: 'medium' | amDateFormat:'LL'}} at {{this.item.time?.toDate() | date: 'medium' | amDateFormat:'hh:mmA'}}
+                                    </li>
+                                    <li class="u-mb-xsmall u-text-small u-color-primary">
+                                        <i class="fa fa-check u-color-info u-text-mute u-mr-xsmall"></i>Customer: {{this.item.name}}
+                                    </li>
+                                    <li class="u-mb-xsmall u-text-small u-color-primary">
+                                        <i class="fa fa-check u-color-info u-text-mute u-mr-xsmall"></i>Contact: {{this.item.phone}}
+                                    </li>
+                                </ul>
+                            </div>
+
+                            <div class="col-md-5">
+                                <ul>                                   
+                                    <li class="u-mb-xsmall u-text-small u-color-primary">
+                                        <i class="fa fa-check u-color-info u-text-mute u-mr-xsmall"></i>Ride Duration: {{this.item.duration}}
+                                    </li>
+                                    <li class="u-mb-xsmall u-text-small u-color-primary">
+                                        <i class="fa fa-check u-color-info u-text-mute u-mr-xsmall"></i>Ride Distance: {{this.item.distance}}
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div><!-- // .c-stage__panel -->
+                <div class="c-stage__label2">
+                    <i class="c-stage__label-icon fa fa-check-circle"></i>
+                    <p class="c-stage__label-title">Destination Address - {{this.item.address2}}</p>
+                </div>
+            </article><!-- // .c-stage -->
+        </div>
+        <div class="col-xl-4">           
+            <div class="c-card u-p-medium">
+                <h5 class="u-h6 u-mb-medium">Project Details</h5>
+
+                <table class="u-width-100">
+                    <tbody>
+                        <tr>
+                            <td class="u-pb-xsmall u-color-primary u-text-small">Price Per 1 Km</td>
+                            <td class="u-pb-xsmall u-text-right u-text-mute u-text-small">${{pricekm}}</td>
+                        </tr>
+                        <tr>
+                            <td class="u-pb-xsmall u-color-primary u-text-small">Total around Price</td>
+                            <td class="u-pb-xsmall u-text-right u-text-mute u-text-small">$0000</td>
+                        </tr>
+                        <tr>
+                            <td class="u-color-primary u-text-small">Assign Driver</td>
+                            <td class="u-text-right u-text-mute u-text-small">Driver 1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div class="c-divider u-mv-small"></div>
+
+                <div class="u-flex u-justify-between u-align-items-center">
+                    <button class="btn btn-block btn-primary">Assign</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div><!-- // .container -->

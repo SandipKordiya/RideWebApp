@@ -1,0 +1,31 @@
+ol, ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.u-ml-medium {
+    margin-left: 1.875rem!important;
+}
+.c-menu__title {
+    margin: 0 0 .625rem 20px;
+    color: #7f8fa4;
+    font-size: .75rem;
+    font-weight: 400;
+    text-transform: uppercase;
+}
+.u-mb-medium {
+    margin-bottom: 1.875rem!important;
+}
+.c-menu__link.is-active {
+    background-color: #2ea1f8;
+    color: #fff;
+}
+.c-menu__link {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0 5px 20px;
+    border-radius: 4px;
+    color: #354052;
+    font-size: .875rem;
+    font-weight: 400;
+}

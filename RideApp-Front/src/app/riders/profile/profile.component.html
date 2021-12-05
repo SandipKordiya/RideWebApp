@@ -1,0 +1,113 @@
+<div class="bgbody">
+  <div class="about-main-content">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12" style="padding-top: 80px">
+          <app-sidebar></app-sidebar>
+          <div class="col-md-6 col-xl-6">
+            
+            <main>
+              <h2 class="u-h3 u-mb-small">Account Settings</h2>
+              <div *ngIf="currentFileUpload" class="progress">
+                  <div class="progress-bar progress-bar-info progress-bar-striped"
+                    role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                    aria-valuemin="0" aria-valuemax="100"
+                    [ngStyle]="{width:progress.percentage+'%'}">
+                    {{progress.percentage}}%</div>
+                </div>
+              <div class="c-card u-p-medium u-text-small u-mb-small">
+                  <form #registerForm="ngForm">
+                <h6 class="u-text-bold">General Info</h6>
+
+                <dl class="u-flex u-pv-small u-border-bottom">
+                  <dt class="u-width-25">Name</dt>
+                  <dd>{{this.item.firstname}}</dd>
+                </dl>
+
+                <dl class="u-flex u-pv-small u-border-bottom">
+                  <dt class="u-width-25">Email</dt>
+                  <dd>{{this.item.email}}</dd>
+                </dl>
+
+                <!-- <dl class="u-flex u-pv-small u-border-bottom">
+                  <dt class="u-width-25">Avatar
+                    <small class="u-block u-text-mute">JPG, max. 500KB</small>
+                  </dt>
+
+                  <dd>
+                      <input class="c-input" type="file" (change)="selectFile($event)">
+                  </dd>
+
+
+                </dl> -->
+
+                <dl class="u-flex u-pt-small">
+                  <dt class="u-width-25">Contact</dt>
+                  <dd>{{this.item.phone}}</dd>
+                </dl>
+                <hr />
+                <button class="button" (click)="upload()" style="color: black; background-color: yellow" type="submit">Update</button>
+                </form>
+              </div>
+
+            </main>
+          </div>
+          <div class="col-md-3 u-mb-medium u-hidden-down@tablet">
+            <!-- <div class="c-profile-card">
+              <div class="c-profile-card__user">
+                <div class="c-profile-card__avatar">
+                  <img src="../../../assets/data/img/avatar-150.jpg" alt="Adam's image">
+                </div>
+
+                <h4 class="c-profile-card__name">{{this.item.firstname}}
+                  <a class="c-profile-card__username">@{{this.item.id}}</a>
+                </h4>
+              </div>
+
+              <ul class="c-profile-card__social">
+
+              </ul>
+
+              <ul class="c-profile-card__meta">
+                <li class="c-profile-card__meta-item">
+                  <i class="fa fa-map-marker"></i>London, United Kingdom
+                </li>
+
+                <li class="c-profile-card__meta-item">
+                  <i class="fa fa-bullhorn"></i>UX Designer
+                </li>
+
+                <li class="c-profile-card__meta-item">
+                  <i class="fa fa-inbox"></i>32 Offers
+                </li>
+              </ul>
+            </div> -->
+            <!--// .c-profile -->
+
+            <!-- FAQ -->
+            <h4 class="u-h6 u-text-bold u-mb-xsmall">FAQ</h4>
+
+            <!-- DEVELOPER NOTE 
+                            Modify this component to `c-list`
+                        -->
+            <ul>
+              <li class="u-mb-xsmall">
+                <a class="u-text-dark u-text-small" >How can I connect my bank account?</a>
+              </li>
+
+              <li class="u-mb-xsmall">
+                <a class="u-text-dark u-text-small" >Why Dashboard doesn’t show any data?</a>
+              </li>
+              <li class="u-mb-xsmall">
+                <a class="u-text-dark u-text-small">If I change my avatar in one version will it appears in
+                  next version?</a>
+              </li>
+            </ul>
+            <a class="u-text-small u-color-blue" >Visit FAQ Page</a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

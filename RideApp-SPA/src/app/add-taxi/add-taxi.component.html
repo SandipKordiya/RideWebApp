@@ -1,0 +1,111 @@
+<!-- 
+ 
+<label class="btn btn-default"> 
+</label>
+
+<div class="container mt-3">
+  <div class="col-md-10">
+    <form #registerForm="ngForm">
+      <hr>
+      <div class="form-group row">
+          <label for="type" class="col-sm-3 col-form-label text-right">
+            <code>*Required</code>
+          </label>
+        </div>
+      <div class="form-group row">
+        <label for="model" class="col-sm-3 col-form-label text-right">model <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text" name="model" [(ngModel)]="model.model" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="number" class="col-sm-3 col-form-label text-right">number <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text" name="number" [(ngModel)]="model.number" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="driver" class="col-sm-3 col-form-label text-right">driver <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text" name="driver" [(ngModel)]="model.driver" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="status" class="col-sm-3 col-form-label text-right">status <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text" name="status" [(ngModel)]="model.status" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="file" class="col-sm-3 col-form-label text-right">file<code>*</code></label>
+        <div class="col-sm-8">
+            <input type="file"
+            (change)="selectFile($event)">
+        </div>
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" (click)="upload()" [disabled]="!registerForm.valid" class="btn btn-primary mr-2">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div> -->
+
+<div class="container">
+  <div class="row u-mb-large">
+    <div class="col-12">
+      <div class="c-tabs">
+        <br />
+        <div class="c-tabs__content tab-content" id="nav-tabContent">
+          <div class="c-tabs__pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+            <div class="row">
+              <div class="col-lg-2 u-text-center">
+              </div>
+              <div class="col-lg-8">
+                  <div *ngIf="currentFileUpload" class="progress">
+                      <div class="progress-bar progress-bar-info progress-bar-striped"
+                        role="progressbar" attr.aria-valuenow="{{progress.percentage}}"
+                        aria-valuemin="0" aria-valuemax="100"
+                        [ngStyle]="{width:progress.percentage+'%'}">
+                        {{progress.percentage}}%</div>
+                    </div>
+                <form #registerForm="ngForm">
+                  <div class="c-field u-mb-small">
+                    <label class="c-field__label" for="firstName">model</label>
+                    <input class="c-input" type="text" name="model" [(ngModel)]="model.model">
+                  </div>
+
+                  <div class="c-field u-mb-small">
+                    <label class="c-field__label" for="lastName">Taxi Number</label>
+                    <input class="c-input" type="text" name="number" [(ngModel)]="model.number">
+                  </div>
+
+
+                  <div class="c-field u-mb-small">
+                    <label class="c-field__label" for="email">Select Driver</label>
+                    <input class="c-input" name="driver" [(ngModel)]="model.driver" type="text">
+                  </div>
+                  <div class="c-field u-mb-small">
+                    <label class="c-field__label" for="companyName">Status</label>
+                    <input class="c-input" name="status" [(ngModel)]="model.status" type="text">
+                  </div>
+
+                  <div class="c-field u-mb-small">
+                    <label class="c-field__label" for="website">Taxi Image</label>
+                    <input class="c-input" type="file" (change)="selectFile($event)">
+                  </div>
+                  <div class="c-field u-mb-small text-center">
+                    <button type="submit" (click)="upload()" [disabled]="!registerForm.valid" class="c-btn c-btn--success">Submit</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div><!-- // .container -->

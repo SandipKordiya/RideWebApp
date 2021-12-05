@@ -1,0 +1,163 @@
+<div class="slider-block">
+  <div class="rev_slider_wrapper">
+    <div class="rev_slider carrent-slider">
+      <div class="main-map" style="min-height: 500px">
+        <agm-map [latitude]="lat" [longitude]="lng">
+          <agm-direction [origin]="origin" [destination]="destination" [renderOptions]="renderOptions" [markerOptions]="markerOptions"
+            [provideRouteAlternatives]='false'>
+          </agm-direction>
+        </agm-map>
+        <div class="top-left">
+          <div class="slider-form-content">
+            <h2 class="slider-form-title text-center">For rates &amp; Availability</h2><!-- /.slider-form-title -->
+            <h4 class="slider-form-subtitle text-center">Search for your Texi</h4>
+            <form action="#" method="get" class="advance-search-query check-vehicle-two yellow-theme">
+              <div class="regular-search">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="input">
+                      <i class="fa fa-map-marker"></i>
+                      <input type="text" placeholder="Your location" ngx-google-places-autocomplete #placesRef="ngx-places"
+                        (onAddressChange)="handleAddressChange($event)" class="pick-location form-controller">
+                    </div>
+                    <!--/.input-->
+                  </div>
+                  <!--/.col-md-4-->
+                  <div class="clearfix"></div><!-- /.clearfix -->
+                  <div class="col-md-12">
+                    <div class="input">
+                      <i class="fa fa-map-marker"></i>
+                      <input type="text" ngx-google-places-autocomplete #placesRef1="ngx-places" placeholder="Off your location"
+                        (onAddressChange)="handleAddressChange2($event)" class="drop-location form-controller">
+                    </div>
+                    <!--/.input-->
+                  </div>
+                  <!--/.col-md-4-->
+
+                </div><!-- /.row -->
+              </div><!-- /.regular-search -->
+
+            </form><!-- /.advance_search_query -->
+          </div>
+        </div>
+        <div *ngIf="totaldistance" class="bottom-left" style="text-align: left !important;">
+          <div class="slider-form-content">
+            <h4 class="slider-form-subtitle">Your Options:</h4><!-- /.slider-form-title -->
+            <form action="#" style="margin-top: 0px !important" class="advance-search-query check-vehicle-two yellow-theme">
+              <div class="regular-search">
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="list-group" style="width: 390px;">
+                      <a href="#" class="list-group-item list-group-item-action active">
+                        Taxi <span class="pull-right">${{this.price1 * this.pricekm}} - ${{this.price1 * this.pricekm +
+                          100}}</span>
+                      </a>
+                      <p>Info: {{arrivetime}} ({{totaldistance}})</p>
+
+                    </div>
+                  </div>
+                  <!--/.col-md-4-->
+                  <div class="clearfix"></div><!-- /.clearfix -->
+                  <div class="col-md-12">
+                    <button class="btn btn-block btn-secondary" (click)="openModal(template)">Book ride</button>
+                  </div>
+                  <!--/.col-md-4-->
+
+                </div><!-- /.row -->
+              </div><!-- /.regular-search -->
+
+            </form><!-- /.advance_search_query -->
+          </div>
+        </div>
+      </div>
+    </div><!-- /.revolution slider -->
+  </div><!-- /.slider wrapper -->
+</div><!-- /.slider-block -->
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Book pickup schedule</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    <div class="slider-form-content">
+      <form #registerForm="ngForm" (ngSubmit)="onSubmit()" class="advance-search-query check-vehicle-two yellow-theme">
+        <div class="regular-search">
+          <div class="row">
+            <div class="col-md-6">
+              <label class="text-uppercase txt-search">Picking up location</label>
+              <div class="input">
+                <i class="fa fa-map-marker"></i>
+                <input type="text" [(ngModel)]="book.address1" name="address1" autocomplete="off"
+                  class="form-controller">
+              </div>
+              <!--/.input-->
+            </div>
+            <div class="col-md-6">
+              <label class="text-uppercase">Dropping off location</label>
+              <div class="input">
+                <i class="fa fa-map-marker"></i>
+                <input type="text" [(ngModel)]="book.address2" name="address2" autocomplete="off"
+                  class="form-controller">
+              </div>
+              <!--/.input-->
+            </div>
+            <div class="col-md-6">
+                <label class="text-uppercase txt-search"> Name</label>
+                <div class="input">
+                  <i class="fa fa-user-circle"></i>
+                  <input type="text" placeholder="Name" name="name" [(ngModel)]="book.name" class="pick-location form-controller">
+                </div>
+              </div>
+              <div class="col-md-6">
+                <label class="text-uppercase txt-search">Phone</label>
+                <div class="input">
+                  <i class="fa fa-phone"></i>
+                  <input type="text" placeholder="Phone Number" name="phone" [(ngModel)]="book.phone" class="pick-location form-controller">
+                </div>
+              </div>
+            <div class="clearfix"></div><!-- /.clearfix -->
+            <div class="col-md-6">
+              <label class="text-uppercase">Picking up date & Time</label>
+              <div class="input">
+                <i class="fa fa-calendar"></i>
+                <input type="text" placeholder="mm/dd/yyyy" class="date-start date-selector form-controller" name="date" autocomplete="off"
+                  [(ngModel)]="book.date" #dp="bsDatepicker" bsDatepicker [bsConfig]="{ dateInputFormat: 'MM-DD-YYYY' }"
+                  required>
+              </div>
+              <!--/.input-->
+            </div>
+            <div class="col-md-6">
+              <div class="input">
+                <timepicker [(ngModel)]="book.time" name="time"></timepicker>
+              </div>
+              <!--/.input-->
+            </div>
+          </div><!-- /.row -->
+        </div>
+        <div class="check-vehicle-footer text-center mr-left-0">
+          <div class="row">
+            <button type="submit" class="button">Book Now</button>
+          </div><!-- /.row -->
+        </div>
+      </form>
+    </div>
+  </div>
+</ng-template>
+
+<!-- <div style="min-height: 500px">
+  <form #registerForm="ngForm">
+    <input  name="address1" ngx-google-places-autocomplete  #placesRef="ngx-places" (onAddressChange)="handleAddressChange($event)">
+    <br/>
+    <input  name="address2" ngx-google-places-autocomplete  #placesRef1="ngx-places" (onAddressChange)="handleAddressChange2($event)">
+  </form>
+  
+  <h2>Here are some links to help you start: </h2>
+  <agm-map [latitude]="lat" [longitude]="lng"></agm-map>
+  <agm-map [latitude]="lat" [longitude]="lng" style="width: 100%; height: 500px;">
+    <agm-direction [origin]="origin" [destination]="destination"  [renderOptions]="renderOptions" 
+    [markerOptions]="markerOptions">
+    </agm-direction>
+  </agm-map>
+</div> -->

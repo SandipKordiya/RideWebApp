@@ -1,0 +1,100 @@
+<!-- <div class="container mt-3">
+  <div class="col-md-10">
+    <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+      <hr>
+      <div class="form-group row">
+          <label for="type" class="col-sm-3 col-form-label text-right">
+            <code>*Required</code>
+          </label>
+        </div>
+      <div class="form-group row">
+        <label for="clubName" class="col-sm-3 col-form-label text-right">Name <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="address" class="col-sm-3 col-form-label text-right">Address <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text"  class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="phone" class="col-sm-3 col-form-label text-right">Phone <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text" class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="email" class="col-sm-3 col-form-label text-right">Email <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text"  class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group row">
+        <label for="drivingId" class="col-sm-3 col-form-label text-right">Driving Id <code>*</code></label>
+        <div class="col-sm-8">
+          <input type="text"  class="form-control" required>
+        </div>
+      </div>
+      <div class="form-group text-center">
+        <button type="submit" [disabled]="!registerForm.valid" class="btn btn-primary mr-2">Submit</button>
+      </div>
+
+    </form>
+  </div>
+</div> -->
+
+
+<div class="container">
+    <div class="row u-mb-large">
+      <div class="col-12">
+        <div class="c-tabs">
+          <br />
+          <div class="c-tabs__content tab-content" id="nav-tabContent">
+            <div class="c-tabs__pane active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+              <div class="row">
+                <div class="col-lg-2 u-text-center">
+                </div>
+                <div class="col-lg-8">
+                    <form #registerForm="ngForm" (ngSubmit)="onSubmit()">
+                    <div class="c-field u-mb-small">
+                      <label class="c-field__label" for="firstName">Driver Name</label>
+                      <input class="c-input" type="text"  name="name" [(ngModel)]="model.name">
+                    </div>
+  
+                    <div class="c-field u-mb-small">
+                      <label class="c-field__label" for="lastName">Address</label>
+                      <input class="c-input" type="text" name="address" [(ngModel)]="model.address">
+                    </div>
+  
+  
+                    <div class="c-field u-mb-small">
+                      <label class="c-field__label" for="email">Phone</label>
+                      <input class="c-input"  name="phone" [(ngModel)]="model.phone" type="text">
+                    </div>
+                    <div class="c-field u-mb-small">
+                      <label class="c-field__label" for="companyName">Email</label>
+                      <input class="c-input" name="email" [(ngModel)]="model.email" type="email">
+                    </div>
+  
+                    <div class="c-field u-mb-small">
+                      <label class="c-field__label" for="website">Driving Id Number</label>
+                      <input class="c-input" type="text" name="drivingId" [(ngModel)]="model.drivingId">
+                    </div>
+                    <div class="c-field u-mb-small text-center">
+                      <button type="submit" [disabled]="!registerForm.valid" class="c-btn c-btn--success">Submit</button>
+                    </div>
+                  </form>
+                </div>
+  
+              </div>
+            </div>
+  
+          </div>
+        </div>
+  
+      </div>
+    </div>
+  </div><!-- // .container -->
+  

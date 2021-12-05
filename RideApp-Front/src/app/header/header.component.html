@@ -1,0 +1,216 @@
+   <!-- ====== Header Top Area ====== -->
+   <header class="header-top-area bg-nero">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 col-sm-7 hidden-xs">
+                <div class="header-content-left">
+                    <ul class="header-top-menu">
+                        <li>
+                            <a href="#" class="top-left-menu">
+                                <i class="fa fa-phone"></i>
+                                <span>Call Us - 01623 030020</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a href="#" class="top-left-menu">
+                                <i class="fa fa-envelope"></i>
+                                <span>example@domain.com</span>
+                            </a>
+                        </li>
+                    </ul><!-- /.header-top-menu -->
+                </div><!-- /.header-content-left -->
+            </div><!-- /.col-md-9 -->
+
+            <div class="col-md-6 col-sm-5">
+                <div class="header-content-right">
+                    <ul class="header-top-menu">
+                        <li *ngIf="!authInfo?.isLoggedIn()">
+                            <a [routerLink]="['/login']" routerLinkActive="router-link-active"  class="language">
+                                <i class="fa fa-sign-in"></i>
+                                <span>Login</span>
+                            </a>
+                        </li>
+                        <li *ngIf="!authInfo?.isLoggedIn()">
+                            <a [routerLink]="['/register']" routerLinkActive="router-link-active"  class="language">
+                                <i class="fa fa-user-plus"></i>
+                                <span>Register</span>
+                            </a>
+                        </li>
+                        <li *ngIf="authInfo?.isLoggedIn()">
+                                <a [routerLink]="['/profile']" routerLinkActive="router-link-active"  class="language">
+                                    <i class="fa fa-user"></i>
+                                    <span>My Account</span>
+                                </a>
+                            </li>
+                        <li *ngIf="authInfo?.isLoggedIn()">
+                                <a  (click)="logout()" style="cursor: pointer" class="language">
+                                    <i class="fa fa-sign-in"></i>
+                                    <span>Log Out</span>
+                                </a>
+                            </li>
+                    </ul>
+                </div><!-- /.left-content -->
+            </div><!-- /.col-md-3 -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</header><!-- /.head-area -->
+
+<header class="header-nav-area">
+    <div class="container-fluid">
+        <div class="row">
+            <div class="container-lg-screen">
+                <div class="row">
+                    <div class="col-md-3 col-sm-2 col-xs-10 col-md-offset-1">
+                        <div class="site-logo">
+                            <a [routerLink]="['/home']" routerLinkActive="router-link-active" >
+                                <img src="./assets/ridelogo.png" style="margin-top: 10px" />
+                            </a>
+                        </div><!-- /.logo -->
+                    </div><!-- /.col-md-2 -->
+                    <div class="col-md-5 col-sm-8 col-xs-2">
+                        <nav id="main-nav" class="site-navigation top-navigation nav-style-three">
+                            <div class="menu-wrapper">
+                                <div class="menu-content">
+                                    <ul class="menu-list">
+                                        <li>
+                                            <span class="menu-click"><i class="menu-arrow fa fa-plus"></i></span>
+                                            <a [routerLink]="['/home']" routerLinkActive="router-link-active" >Home</a>
+
+                                        </li>
+                                        <li>
+                                            <a [routerLink]="['/fare-estimate']" routerLinkActive="router-link-active" >Booking</a>
+                                        </li>
+
+
+                                        <li>
+                                            <a [routerLink]="['/about']" routerLinkActive="router-link-active" >About</a>
+                                        </li>
+
+                                        <li>
+                                            <a [routerLink]="['/contact']" routerLinkActive="router-link-active" >Contact</a>
+                                        </li>
+                                    </ul> <!-- /.menu-list -->
+                                </div> <!-- /.menu-content-->
+                            </div> <!-- /.menu-wrapper -->
+                        </nav><!-- /.site-navigation -->
+                        <!--Mobile Main Menu-->
+                        <div class="mobile-menu-main hidden-md hidden-lg pdm-10">
+                            <div class="menucontent overlaybg"> </div>
+                            <div class="menuexpandermain slideRight">
+                                <a id="navtoggole-main" class="animated-arrow slideLeft menuclose">
+                                    <span></span>
+                                </a>
+                            </div><!--/.menuexpandermain-->
+
+                            <div id="mobile-main-nav" class="mb-navigation slideLeft">
+                                <div class="slimScrollDiv" style="position: relative; overflow: hidden; width: auto; height: 100%;">
+                                    <div class="menu-wrapper" style="overflow: hidden; width: auto; height: 100%;">
+                                        <div id="main-mobile-container" class="menu-content clearfix">
+                                            <ul class="menu-list">
+                                                <li>
+                                                    <span class="menu-click"><i class="menu-arrow fa fa-plus"></i></span>
+                                                    <a href="#">Home<span class="fa fa-angle-down"></span></a>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="index-2.html">Home Layout One</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index02.html">Home Layout Two</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index03.html">Home Layout Three</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index04.html">Home Layout Four</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index05.html">Home Layout Five</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index06.html">Home Layout Six</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index07.html">Home Layout Seven</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index08.html">Home Layout Eight</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index09.html">Home Layout Nine</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index10.html">Home Layout Ten</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="car-single-page.html">Booking</a>
+                                                </li>
+                                                <li>
+                                                    <span class="menu-click"><i class="menu-arrow fa fa-plus"></i></span>
+                                                    <a href="#">Car-rent<span class="fa fa-angle-down"></span></a>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="car-category.html">Car Category 01</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="car-category-two.html">Car Category 02</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="car-category-three.html">Car Category 03</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="car-single-page.html">Car Single Page</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <span class="menu-click"><i class="menu-arrow fa fa-plus"></i></span>
+                                                    <a href="#">Pages<span class="fa fa-angle-down"></span></a>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="comming-soon.html">Coming Soon</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="404.html">404</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="about.html">About</a>
+                                                </li>
+                                                <li>
+                                                    <span class="menu-click"><i class="menu-arrow fa fa-plus"></i></span>
+                                                    <a href="#">Blog<span class="fa fa-angle-down"></span></a>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="blog.html">Blog</a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog-single.html">Single Post</a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                                <li>
+                                                    <a href="contact.html">Contact</a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div><div class="slimScrollBar" style="background: rgb(0, 0, 0); width: 5px; position: absolute; top: 0px; opacity: 0.4; display: block; border-radius: 7px; z-index: 99; right: 1px;"></div><div class="slimScrollRail" style="width: 5px; height: 100%; position: absolute; top: 0px; display: none; border-radius: 7px; background: rgb(51, 51, 51); opacity: 0.2; z-index: 90; right: 1px;"></div>
+                                </div>
+                            </div><!--/#mobile-main-nav-->
+                        </div><!--/.mobile-menu-main-->
+                    </div><!-- /.col-md-8 -->
+                    <div class="col-md-2 pd-zero hidden-xs">
+                        <div class="tel-contact-number">
+                            <a href="tel:01623-58030020">01623-58030020</a>
+                            <span class="icon-part">
+                                <i class="fa fa-phone"></i>
+                            </span>
+                        </div>
+                    </div><!-- /.col-md-2 -->
+                </div><!-- /.row -->
+            </div><!-- /.container-lg-screen -->
+        </div><!-- /.row -->
+    </div><!-- /.container -->
+</header>

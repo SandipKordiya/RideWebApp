@@ -1,0 +1,80 @@
+<div class="slider-form-content">
+    <h2 class="slider-form-title text-center">For rates &amp; Availability</h2><!-- /.slider-form-title -->
+    <h4 class="slider-form-subtitle text-center">Search for your Texi</h4>
+    <form action="#" method="get" class="advance-search-query check-vehicle-two yellow-theme">
+      <div class="regular-search">
+        <div class="row">
+          <div class="col-md-5">
+            <label class="text-uppercase txt-search">Picking up location</label>
+            <div class="input">
+              <i class="fa fa-map-marker"></i>
+              <input type="text" placeholder="Your location" ngx-google-places-autocomplete  #placesRef="ngx-places" class="pick-location form-controller">
+            </div>
+            <!--/.input-->
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-4">
+            <label class="text-uppercase">Picking up date</label>
+            <div class="input">
+              <i class="fa fa-calendar"></i>
+              <input type="text"  class="date-start date-selector form-controller" placeholder="dd/mm/yy">
+            </div>
+            <!--/.input-->
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-3">
+            <label class="text-uppercase">Time</label>
+            <div class="input">
+              <i class="fa fa-clock-o"></i>
+              <input type="text"  class="time-selector form-controller" placeholder="15:00 am">
+            </div>
+            <!--/.input-->
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="clearfix"></div><!-- /.clearfix -->
+
+          <div class="col-md-5">
+            <label class="text-uppercase">Dropping off location</label>
+            <div class="input">
+              <i class="fa fa-map-marker"></i>
+              <input type="text"  ngx-google-places-autocomplete  #placesRef1="ngx-places" placeholder="Off your location" class="drop-location form-controller">
+            </div>
+            <!--/.input-->
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-4">
+            <label class="text-uppercase">Dropping off date</label>
+            <div class="input">
+              <i class="fa fa-calendar"></i>
+              <input type="text" class="date-end  date-selector form-controller" placeholder="dd/mm/yy">
+            </div>
+            <!--/.input-->
+          </div>
+          <!--/.col-md-4-->
+
+          <div class="col-md-3">
+            <label class="text-uppercase">time</label>
+            <div class="input">
+              <i class="fa fa-clock-o"></i>
+              <input type="text" class="time-selector form-controller" placeholder="12:00 am">
+            </div>
+            <!--/.input-->
+          </div>
+          <!--/.col-md-4-->
+        </div><!-- /.row -->
+      </div><!-- /.regular-search -->
+
+
+
+      <div class="check-vehicle-footer text-center mr-left-0">
+        <div class="row">
+          <button type="submit" class="button">Book taxi Now</button>
+
+        </div><!-- /.row -->
+      </div><!-- /.check-vehicle-footer -->
+    </form><!-- /.advance_search_query -->
+  </div>
